@@ -1,0 +1,173 @@
+/* GENERAL */
+
+body {
+	background-image: url("../images/main.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	text-align: center;
+	margin: 0;
+}
+
+/* HEADER */
+
+header {
+	background-image: linear-gradient(to bottom right, #607B8B,#0099CC,#63D1F4, #fff);
+	border-bottom: 8px solid #000;
+	height: 100px;
+	margin; 0;
+}
+
+header img:first-child {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+header button {
+	margin-top: 10px;
+	margin-right: 20px; 
+	cursor: pointer;
+	height: 80px;
+	width: 80px;
+	border: 0px solid red;
+}
+
+/* MAIN CONTAINER */
+
+#mainContainer {
+	min-height: 560px;
+	border: 3px #dddddd solid;
+	border-radius: 5px;
+	width: 95%;
+	/*background-color: #ffffff;*/
+	overflow: auto;
+	position: relative;
+	margin: 20px auto;
+	/*max-height: 560px;*/
+	padding: 20px;
+	line-height: 15px;
+}
+
+input[type="submit"], button.submit{
+    padding: 5px 10px;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: #4B0082;
+    font-size: 15px;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+.startButton[disabled], .resetButton[disabled] {
+	opacity: 0.5;
+}
+
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+
+.dispHide {
+	display: none;
+}
+
+.lCont {
+	margin: 5px;
+	/*border: 1px solid red;*/
+	height: 100%;
+	width: 40%;
+	padding: 15px 10px;
+	max-height: 500px;
+	overflow: auto;
+	color: white;
+	font-weight: bold;
+}
+
+.lCont form {
+	width: 100%;
+}
+
+.lCont form input[type="text"] {
+	width: 250px;
+	border: none;
+	border-bottom: 2px solid white;
+	outline: none;
+	background: none;
+	color: white;
+}
+
+.rCont {
+	margin: 5px;
+	/*border: 1px solid red;*/
+	height: 100%;
+	width: 58%;
+	padding: 15px 10px;
+	max-height: 500px;
+	overflow: auto;
+	color: white;
+	font-weight: bold;
+}
+
+#button-divs {
+	margin: 10px auto;
+	width: 95%;
+}
+
+.gif {
+	width: 350px;
+	height: 200px;
+	margin: 15px 10px;
+	border: 2px solid #63D1F4;
+	cursor: pointer;
+	margin-right: 0px;
+}
+
+.projectTitle {
+	background-color: #63D1F4;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+	padding: 0.025px 0;
+	position: relative;
+	bottom: 30px;
+	line-height: 30px;
+}
+
+.imgsize {
+	width: 345px;
+	height: 196px;
+}
+
+/* FOOTER */
+
+footer {
+	border-top: 8px solid #000;
+	background-image: linear-gradient(to bottom right, #607B8B,#0099CC,#63D1F4, #fff);
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	padding: 20px;
+}
+
+/* DIALOG */
+
+.modal-header {
+	background-color: #4B0082;
+	color: white;
+}
+
+.modal-title {
+	text-align: center;
+	width: 100%;
+}

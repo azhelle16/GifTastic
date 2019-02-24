@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax Application: GifTastic</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./assets/javascript/app.js"></script>
+</head>
+<body>
+	<!-- header -->
+	<header>
+		<img class="fleft" src="./assets/images/title.png" height="80" width="20%">
+		<!-- <button style="background: url('./assets/images/qmark.png') no-repeat; background-size: 80px 80px" data-toggle="modal" data-target=".modal" class="info fright" id="info" data-backdrop="static" data-keyboard="false"></button> -->
+	</header>
+	<!-- main container -->
+	<div id="mainContainer">
+		<div class="lCont fleft">
+			<form id="form1">
+				Enter A TV Show:&nbsp;&nbsp;<input type="text" id="anInput" autocomplete="off">&nbsp;&nbsp;
+				<input id="sbut" type="submit" value="Submit">
+			</form>
+			<div id="button-divs"></div>	
+		</div>
+		<div class="rCont fright">
+			
+		</div>
+	</div>
+	<!-- footer -->
+	<footer>
+		Copyright &copy;<br>
+	</footer>	
+	<!-- dialog box -->
+	<div class="modal" tabindex="-1" role="dialog" id="infoModal">
+  		<div class="modal-dialog" role="document">
+  			<div class="modal-content">
+   		  		<div class="modal-header">
+        			<h5 class="modal-title">HOW TO PLAY</h5>
+      			</div>
+     			<div class="modal-body">
+     		   		<p>Answer the questions within the given number of time.</p>
+     		   		<p>Click "START" to start the game.</p>
+      			</div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-primary" data-dismiss="modal">Got It!</button>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+	<div class="modal" tabindex="-1" role="dialog" id="alertModal">
+  		<div class="modal-dialog" role="document">
+  			<div class="modal-content">
+   		  		<div class="modal-header">
+        			<!-- <h5 class="modal-title">HOW TO PLAY</h5> -->
+      			</div>
+     			<div class="modal-body">
+      			</div>
+      			<div class="modal-footer">
+        			<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+</body>
+</html>
