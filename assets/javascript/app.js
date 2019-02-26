@@ -14,7 +14,7 @@
 */
 
 /* GLOBAL VARIABLES */
-var buttonArr = {"ncis":0,"csi":0,"friends":0,"charmed":0,"gossip girl":0,"pretty little liars":0} //array of topics
+var topics = {"ncis":0,"csi":0,"friends":0,"charmed":0,"gossip girl":0,"pretty little liars":0} //array of topics
 var passed = false //initialization flag
 
 $(document).ready(function() {
@@ -33,8 +33,8 @@ $(document).ready(function() {
  		if (topic == "") {
  			alertMsg("Please provide a TV Show.")
  		} else {
-	 		if (!(topic in buttonArr)) {
-	 			buttonArr[topic] = 0
+	 		if (!(topic in topics)) {
+	 			topics[topic] = 0
 	 			createDynamicButton(topic,1)
 	 		} else {
 	 			alertMsg(topic+" already exists!")
@@ -44,7 +44,7 @@ $(document).ready(function() {
  	})
  	
  	//CREATE INITIAL BUTTONS
- 	for (keys in buttonArr) {
+ 	for (keys in topics) {
  		createDynamicButton(keys,9)
  	}
 
@@ -54,10 +54,10 @@ $(document).ready(function() {
  	//BUTTONS CLICK 
  	$("#button-divs").on("click", "button", function() {
  		var t = $(this).text()
- 		buttonArr[t] += 1
- 		var limit = buttonArr[t] * 10
+ 		topics[t] += 1
+ 		var limit = topics[t] * 10
  		sendQuery(limit,t)
- 		//console.log(t+": "+buttonArr[t])	
+ 		//console.log(t+": "+topics[t])	
  	})
 
 })
@@ -150,9 +150,9 @@ function sendQuery(limit, query) {
  #  FUNCTION NAME : createGIFpage
  #  AUTHOR        : Maricel Louise Sumulong
  #  DATE          : February 23, 2019 PST
- #  MODIFIED BY   : 
- #  REVISION DATE : 
- #  REVISION #    : 
+ #  MODIFIED BY   : Maricel Louise Sumulong
+ #  REVISION DATE : February 24, 2019 PST
+ #  REVISION #    : 1
  #  DESCRIPTION   : creates GIF images
  #  PARAMETERS    : json data
  #
@@ -161,7 +161,7 @@ function sendQuery(limit, query) {
 
 function createGIFpage(data) {
 
-	$(".rCont").empty()
+	$(".rCont").empty().scrollTop();
 
 	for (var i = 0; i < data.data.length; i++) {
 		var pdiv = $("<div>")
