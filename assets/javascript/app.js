@@ -151,8 +151,8 @@ function sendQuery(limit, query) {
  #  AUTHOR        : Maricel Louise Sumulong
  #  DATE          : February 23, 2019 PST
  #  MODIFIED BY   : Maricel Louise Sumulong
- #  REVISION DATE : February 24, 2019 PST
- #  REVISION #    : 1
+ #  REVISION DATE : February 26, 2019 PST
+ #  REVISION #    : 2
  #  DESCRIPTION   : creates GIF images
  #  PARAMETERS    : json data
  #
@@ -169,14 +169,30 @@ function createGIFpage(data) {
 		var cdiv = $("<div>")
 		var im = $("<img>")
 		var sp = $("<span>")
+		var sp2 = $("<span>") //for add to favorites and 1-click download
+		var b1 = $("<button>") //for add to favorites 
+		var b2 = $("<button>") //for 1-click downloads
+		//IMAGE - GIF
 		im.attr("src",data.data[i].images.original_still.url)
 		im.attr("data-still",data.data[i].images.original_still.url)
 		im.attr("data-animate",data.data[i].images.original.url)
 		im.attr("data-state","still")
 		im.attr("class","imgsize")
+		//RATING
 		sp.text("Rating: "+data.data[i].rating.toUpperCase())
 		cdiv.attr("class","projectTitle")
 		cdiv.append(sp)
+		cdiv.append("<br>")
+		//FAVORITES
+		b1.text("Add To Favorites")
+		b1.attr("class","gifButton")
+		b1.attr("onclick","addToFavorites(this)")
+		//1-CLICK DOWNLOAD
+		//b2.text("Download")
+		//b2.attr("class","gifButton")
+		sp2.append(b1)
+		//sp2.append(b2)
+		cdiv.append(sp2)
 		pdiv.append(im)
 		pdiv.append(cdiv)
 		$(".rCont").append(pdiv)
@@ -197,5 +213,57 @@ function createGIFpage(data) {
 		}
 		$(this).attr("src",src)
 	})
+
+}
+
+/*
+ #######################################################################
+ #
+ #  FUNCTION NAME : addToFavorites
+ #  AUTHOR        : Maricel Louise Sumulong
+ #  DATE          : February 26, 2019 PST
+ #  MODIFIED BY   : 
+ #  REVISION DATE : 
+ #  REVISION #    : 
+ #  DESCRIPTION   : adds the selected image/gif to the favorites function
+ #  PARAMETERS    : element
+ #
+ #######################################################################
+*/
+
+function addToFavorites(obj) {
+
+	var pdiv = $("<div>")
+	pdiv.attr("class","gif2")
+	var cdiv = $("<div>")
+	var im = $("<img>")
+	var sp = $("<div>")
+	var b1 = $("<button>") //for remove button
+	cdiv.attr("class","projectTitle")
+
+	//REMOVE BUTTON
+	b1.text("Remove")
+	b1.attr("class","gifButton")
+	b1.attr("onclick","$(this).parent().parent().parent().remove()")
+	sp.append(b1)
+	sp.attr("style","margin-top:10px")
+	cdiv.append(sp)
+
+	//IMAGE
+	var im = $("<img>")
+	var src = $(obj).parent().parent().prev().attr("src")
+	var dstill = $(obj).parent().parent().prev().attr("data-still")
+	var danim = $(obj).parent().parent().prev().attr("data-animate")
+	var state = $(obj).parent().parent().prev().attr("data-state")
+
+	im.attr("src",src)
+	im.attr("data-still",dstill)
+	im.attr("data-animate",danim)
+	im.attr("data-state",state)
+	im.attr("class","imgsize")
+
+	pdiv.append(im)
+	pdiv.append(cdiv)
+	$("#favorites").append(pdiv)
 
 }

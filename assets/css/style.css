@@ -85,9 +85,9 @@ input[type="submit"], button.submit{
 	/*border: 1px solid red;*/
 	height: 100%;
 	width: 40%;
-	padding: 15px 10px;
+	padding: 5px 10px;
 	max-height: 500px;
-	overflow: auto;
+	/*overflow: auto;*/
 	color: white;
 	font-weight: bold;
 }
@@ -120,11 +120,13 @@ input[type="submit"], button.submit{
 #button-divs {
 	margin: 10px auto;
 	width: 95%;
+	max-height: 100px;
+	overflow: auto;
 }
 
 .gif {
 	width: 350px;
-	height: 200px;
+	height: 270px;
 	margin: 15px 10px;
 	border: 2px solid #63D1F4;
 	cursor: pointer;
@@ -134,18 +136,69 @@ input[type="submit"], button.submit{
 .projectTitle {
 	background-color: #63D1F4;
 	color: white;
-	font-size: 20px;
+	font-size: 15px;
 	text-align: center;
 	width: 100%;
 	padding: 0.025px 0;
 	position: relative;
-	bottom: 30px;
+	bottom: 0px;
 	line-height: 30px;
 }
 
 .imgsize {
 	width: 345px;
 	height: 196px;
+}
+
+.gifButton{
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: #4B0082;
+    font-size: 15px;
+    font-family: 'Georgia', Times, Times New Roman, serif;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    margin: 0px 15px 5px 0px;
+}
+
+#botDivs {
+	max-height: 350px;
+	/*border: 2px solid red;	*/
+	width: 100%;
+}
+
+#topDiv {
+	margin-bottom: 15px;
+	max-height: 150px;
+	width: 100%;
+}
+
+.favHeader {
+	width: 100%;
+	background-color: #4B0082;
+	text-align: justify;
+	height: 35px;
+	padding: 10px;
+}
+
+#favorites {
+	min-height: 200px;
+	overflow: auto;
+	max-height: 300px;
+}
+
+.gif2 {
+	width: 350px;
+	height: 250px;
+	margin: 15px 10px;
+	border: 2px solid #63D1F4;
+	cursor: pointer;
+	/*margin-right: 0px;*/
+	margin: 20px auto 0px auto;
 }
 
 /* FOOTER */
