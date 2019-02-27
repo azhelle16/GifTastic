@@ -60,6 +60,24 @@ $(document).ready(function() {
  		//console.log(t+": "+topics[t])	
  	})
 
+ 	//GIF IMAGES
+ 	$(".rCont, #favorites").on("click", "img",function() {
+		var state = $(this).attr("data-state")
+		var src;
+		switch (state) {
+			case "still":
+				src = $(this).attr("data-animate")
+				$(this).attr("data-state","animate")
+			break;
+			case "animate":
+				src = $(this).attr("data-still")
+				$(this).attr("data-state","still")
+			break;
+		}
+		$(this).attr("src",src)
+	})
+
+
 })
 
 /*
@@ -188,31 +206,18 @@ function createGIFpage(data) {
 		b1.attr("class","gifButton")
 		b1.attr("onclick","addToFavorites(this)")
 		//1-CLICK DOWNLOAD
-		//b2.text("Download")
-		//b2.attr("class","gifButton")
+		b2.text("Download")
+		b2.attr("class","gifButton")
+		b2.attr("onclick","downloadTheImg(this)")
 		sp2.append(b1)
-		//sp2.append(b2)
+		sp2.append(b2)
 		cdiv.append(sp2)
 		pdiv.append(im)
 		pdiv.append(cdiv)
 		$(".rCont").append(pdiv)
 	}
 
-	$(".rCont img").on("click",function() {
-		var state = $(this).attr("data-state")
-		var src;
-		switch (state) {
-			case "still":
-				src = $(this).attr("data-animate")
-				$(this).attr("data-state","animate")
-			break;
-			case "animate":
-				src = $(this).attr("data-still")
-				$(this).attr("data-state","still")
-			break;
-		}
-		$(this).attr("src",src)
-	})
+	
 
 }
 
@@ -265,5 +270,47 @@ function addToFavorites(obj) {
 	pdiv.append(im)
 	pdiv.append(cdiv)
 	$("#favorites").append(pdiv)
+
+}
+
+
+/*
+ #######################################################################
+ #
+ #  FUNCTION NAME : downloadTheImg
+ #  AUTHOR        : Maricel Louise Sumulong
+ #  DATE          : February 26, 2019 PST
+ #  MODIFIED BY   : 
+ #  REVISION DATE : 
+ #  REVISION #    : 
+ #  DESCRIPTION   : adds the selected image/gif to the favorites function
+ #  PARAMETERS    : element
+ #
+ #######################################################################
+*/
+
+function downloadTheImg(obj) {
+
+	var queryURL = $(obj).parent().parent().prev().attr("data-animate")
+	var imgArr = queryURL.split("/")
+	var iName = imgArr[imgArr.length-1]
+
+	//FROM https://codepen.io/chrisdpratt/pen/RKxJNo
+
+	$.ajax({
+        url: queryURL,
+        method: 'GET',
+        xhrFields: {
+            responseType: 'blob'
+        },
+        success: function (data) {
+            var a = document.createElement('a');
+            var url = window.URL.createObjectURL(data);
+            a.href = url;
+            a.download = iName;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    });
 
 }
