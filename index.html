@@ -3,6 +3,8 @@
 <head>
 	<title>Ajax Application: GifTastic</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="./assets/fontawesome-free-5.7.1-web/css/all.css">
+	<link rel="stylesheet" href="./assets/fontawesome-free-5.7.1-web/css/all.min.css">	
 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,33 +13,36 @@
 </head>
 <body>
 	<!-- header -->
-	<header>
-		<img class="fleft" src="./assets/images/title.png" height="80" width="20%">
-		<button style="background: url('./assets/images/qmark.png') no-repeat; background-size: 80px 80px" data-toggle="modal" data-target=".modal" class="info fright" id="info" data-backdrop="static" data-keyboard="false"></button>
+	<header class="sticky-top">
+		<img class="float-left img-fluid mw-100 h-100 mt-2 ml-4" src="./assets/images/title.png"> 
+		<!-- height="80" width="20%"> -->
+		<button style="background: url('./assets/images/qmark.png') no-repeat; background-size: 80px 80px" data-toggle="modal" data-target=".modal" class="info float-right mt-2 mr-4" id="info" data-backdrop="static" data-keyboard="false"></button>
 	</header>
 	<!-- main container -->
-	<div id="mainContainer">
-		<div class="lCont fleft">
-			<div id="topDiv">
-				<form id="form1">
-					Enter A TV Show:&nbsp;&nbsp;<input type="text" id="anInput" autocomplete="off">&nbsp;&nbsp;
+	<div class="row">
+		<div id="mainContainer" class="rounded col mx-5 p-2 my-3 position-relative">
+			<div id="topDiv" class="w-100 h-100 float-left col-lg-5 text-white my-2 px-0 py-2 font-weight-bold mb-2">
+				<form id="form1" class="w-100">
+					Enter A TV Show:&nbsp;&nbsp;<input type="text" id="anInput" autocomplete="off" class="text-white">&nbsp;&nbsp;
 					<input id="sbut" type="submit" value="Submit">
 				</form>
 				<div id="button-divs"></div>
 			</div>
-			<div id="botDivs">
-				<div class="favHeader">FAVORITES</div>
+			<div class="rCont float-right my-1 h-100 w-100 col-lg-6 text-white font-weight-bold p-0 my-2">	
+			</div>
+			<div id="botDivs" class="w-100 h-100 float-left col-lg-5 text-white my-2 px-0 pb-2 font-weight-bold mb-2">
+				<div class="favHeader w-100 p-2 text-justify">
+					<span class="float-left">FAVORITES</span>
+					<span class="float-right">Hide</span>
+				</div>
 				<div id="favorites">
 					
 				</div>
-			</div>	
-		</div>
-		<div class="rCont fright">
-			
+			</div>
 		</div>
 	</div>
 	<!-- footer -->
-	<footer>
+	<footer class="fixed-bottom text-center align-self-center w-100 py-4">
 		Copyright &copy;<br>
 	</footer>	
 	<!-- dialog box -->
@@ -48,10 +53,11 @@
         			<h5 class="modal-title">ABOUT THIS PROJECT</h5>
       			</div>
      			<div class="modal-body">
-     		   		<p>The goal of this homework is to collect GIFs based from the button selected.</p>
-     		   		<p>You can also add new topics to pull out GIFs from by providing data in the line and hit the submit button.</p>
+     		   		<p>The goal of this project is to collect GIFs using AJAX based from the button selected.</p>
+     		   		<p>You can also add new topics to pull out GIFs from by providing data in the line and hit the submit button or press enter.</p>
      		   		<p>For every selection of the same button, 10 additional GIFs will be added.</p>
      		   		<p>The user can also add a GIF through the FAVORITES section. The added GIF can also be removed by clicking on the REMOVE button</p>
+     		   		<p>The user can also download a GIF.</p>
       			</div>
       			<div class="modal-footer">
         			<button type="button" class="btn btn-primary" data-dismiss="modal">Got It!</button>
