@@ -6,10 +6,10 @@
 <p>The user can also add a GIF through the FAVORITES section. The added GIF can also be removed by clicking on the REMOVE button</p>
 <p>The user can also download a GIF.</p>
 
-#Downloading The Image
+## Downloading The Image
 
 <p>The download functionality is made possible with this code:<br/><br/>https://codepen.io/chrisdpratt/pen/RKxJNo</p>
 
-#Icons
+## Icons
 
 <p>Icons used are from https://fontawesome.com</p>
